@@ -157,3 +157,7 @@ header a {
     width: 29em;
     height: 7em;
 }
+
+#update_section{
+    display: none;
+}

@@ -1,6 +1,8 @@
 
 const contentDiv = document.getElementById('content')
 const title = document.getElementById('blog_title')
+const updateDiv = document.getElementById('update_section')
+const tsAllDiv = document.getElementById("ts_all")
 
 async function getPosts(url){
     const response = await fetch('./api/posts');
@@ -43,10 +45,10 @@ class displayBlogs{
         h2_a.innerHTML = title
         h2.appendChild(h2_a)
 
-        let date = document.createElement('a')
-        date.classList.add('text-muted', 'mb-3')
-        date.innerHTML = 'July 27, 2022'
-        this.blogDiv.appendChild(date)
+        // let date = document.createElement('a')
+        // date.classList.add('text-muted', 'mb-3')
+        // date.innerHTML = 'July 27, 2022'
+        // this.blogDiv.appendChild(date)
 
         let thumbnail = document.createElement('div')
         thumbnail.classList.add('thumbnail', 'mb-2')
@@ -69,17 +71,21 @@ class displayBlogs{
         buttons.classList.add('buttons')
         this.blogDiv.append(buttons)
 
-        let btn_p = document.createElement('a')
-        btn_p.classList.add('btn', 'btn-primary')
-        btn_p.innerHTML = 'Read More'
-        btn_p.href = '#'
-        buttons.appendChild(btn_p)
+        // let btn_p = document.createElement('a')
+        // btn_p.classList.add('btn', 'btn-primary')
+        // btn_p.innerHTML = 'Read More'
+        // btn_p.href = '#'
+        // buttons.appendChild(btn_p)
 
         let btn_i = document.createElement('a')
         btn_i.classList.add('btn', 'btn-info')
         btn_i.innerHTML = 'Edit'
         btn_i.href = '#'
         buttons.appendChild(btn_i)
+
+        btn_i.addEventListener('click', (() =>{
+            this.editPost(id)
+        }).bind(this))
 
         let btn_d = document.createElement('a')
         btn_d.classList.add('btn', 'btn-danger')
@@ -100,6 +106,15 @@ class displayBlogs{
             })
          .then(window.location.href = '/')
          .catch(console.log);
+    }
+
+    async editPost(id){
+        contentDiv.style.display = 'none'
+        tsAllDiv.style.display = 'none'
+        updateDiv.style.display = 'block'
+
+        preLoadFields(id)
+        
     }
 }
 
