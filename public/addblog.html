@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>blogApp</title>
+</head>
+
+<body>
+    <section class="main">
+        <header>
+            <a href="./">blogApp</a>
+        </header>
+
+        <div class="top_section">
+            <h1 class="mb-4">Add new Blog Post</h1>
+        
+        </div>
+
+        <div id="addblog" class="content">
+            <form class="form" method="post">
+                
+                <label for='title'>Title</label>
+                <p>
+                    <input id="title" type="text">
+                </p>
+                <label for='body'>Body</label>
+                <p>
+                    <textarea id="body" name="body"></textarea>
+                </p>
+                <!-- <label for='content'>Content <br> <small class="text-muted">*Please enter markdown text</small></label>
+                <p>
+                    <textarea id="'content" name="content"></textarea>
+                </p> -->
+                <div class="buttons">
+                    <a id="blogsubmit" type='submit' class="btn btn-primary" href="#" >Save</a>
+                    <a type='button' class="btn btn-secondary" href="/">Cancel</a>
+                </div>
+            </form>
+
+        </div>
+
+    </section>
+
+    <script src="./assets/js/addblog.js"></script>
+</body>
+
+</html>
